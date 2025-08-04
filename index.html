@@ -30,7 +30,7 @@
 		<div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
 	</header>
 	<main>
-		<div class="clock">
+		<div id="clock">
 			<div class="clock-component">
 				<p class="clock--time clock--days">00</p>
 				<p class="clock--unit">Days</p>
@@ -47,6 +47,12 @@
 				<p class="clock--time clock--seconds">00</p>
 				<p class="clock--unit">Seconds</p>
 			</div>
+		</div>
+
+		<div id="activity">
+			<label for="date">Days Until</label>
+			<div class="until__event">6 April 2026</div>
+			<!-- <input type="date" name="date" id="date"> -->
 		</div>
 	</main>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.13/dayjs.min.js"></script>

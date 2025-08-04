@@ -1,5 +1,46 @@
 dayjs.extend(dayjs_plugin_duration);
 
+const clockContainer = document.querySelector("#clock");
+const activityContainer = document.querySelector("#activity");
+
+/**
+ * COUNTDOWN (DAYS UNTIL X)
+ */
+
+function activateCountdown(dateString) {
+    const targetDate = dayjs(dateString);
+
+    activityContainer.querySelector(".until__event").textContent =
+        targetDate.format("D MMMM YYYY");
+
+    setInterval(() => {
+        const now = dayjs();
+        const countdown = dayjs.duration(targetDate.diff(now));
+
+        if (countdown.asMilliseconds() <= 0) return;
+
+        clockContainer.querySelector(".clock--seconds").textContent = countdown
+            .seconds()
+            .toString()
+            .padStart(2, "0");
+        clockContainer.querySelector(".clock--minutes").textContent = countdown
+            .minutes()
+            .toString()
+            .padStart(2, "0");
+        clockContainer.querySelector(".clock--hours").textContent = countdown
+            .hours()
+            .toString()
+            .padStart(2, "0");
+        clockContainer.querySelector(".clock--days").textContent = countdown
+            .asDays()
+            .toFixed(0)
+            .toString()
+            .padStart(2, "0");
+    }, 250);
+}
+
+activateCountdown("2025-12-5");
+
 /**
  * SIDEBAR NAVIGATION
  */

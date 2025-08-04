@@ -83,7 +83,7 @@ body {
     color: var(--text);
 }
 
-.clock {
+#clock {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
