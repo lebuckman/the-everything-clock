@@ -4,8 +4,8 @@
 }
 
 @font-face {
-    font-family: "Digital-7";
-    src: url(./assets/fonts/Digital-7-Regular.ttf);
+    font-family: "Technology";
+    src: url(./assets/fonts/Technology-Regular.ttf);
 }
 
 :root {
@@ -82,12 +82,12 @@ body {
 .clock {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 40px 3em;
+    gap: 20px;
+    padding: 50px 3em;
 }
 
 .clock-component {
-    padding: 18px 50px;
+    padding: 18px 40px;
     border-radius: 55px;
     background: var(--gradient);
     border: var(--border-card);
@@ -96,7 +96,7 @@ body {
 }
 
 .clock--time {
-    font-family: "Digital-7", sans-serif;
+    font-family: "Technology", sans-serif;
     font-size: 3rem;
 }
 
