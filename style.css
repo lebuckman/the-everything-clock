@@ -22,7 +22,7 @@
         0px 4px 4px hsla(0, 0%, 0%, 0.15);
 }
 
-body.light {
+body.lightmode {
     --bg-dark: hsl(0 0% 90%);
     --bg: hsl(0 0% 95%);
     --bg-light: hsl(0 0% 100%);
@@ -109,6 +109,34 @@ body {
 footer {
     font-size: 0.75rem;
     padding-block: 1em;
+}
+
+/* light / dark mode icon */
+
+#theme-switch {
+    position: fixed;
+    top: 9px;
+    left: 9px;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.lightmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.lightmode #theme-switch svg:last-child {
+    display: block;
 }
 
 /* media queries */
