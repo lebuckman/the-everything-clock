@@ -1,0 +1,115 @@
+@font-face {
+    font-family: "Inter";
+    src: url(./assets/fonts/Inter.ttf);
+}
+
+@font-face {
+    font-family: "Digital-7";
+    src: url(./assets/fonts/Digital-7-Regular.ttf);
+}
+
+:root {
+    --bg-dark: hsl(0 0% 0%);
+    --bg: hsl(0 0% 5%);
+    --bg-light: hsl(0 0% 10%);
+    --text: hsl(0 0% 95%);
+    --text-muted: hsl(0 0% 70%);
+    --border: hsl(0 0% 30%);
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --highlight: hsl(0 0% 60%);
+    --border-card: solid 1px var(--border);
+    --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07),
+        0px 4px 4px hsla(0, 0%, 0%, 0.15);
+}
+
+body.light {
+    --bg-dark: hsl(0 0% 90%);
+    --bg: hsl(0 0% 95%);
+    --bg-light: hsl(0 0% 100%);
+    --text: hsl(0 0% 5%);
+    --text-muted: hsl(0 0% 30%);
+    --border: hsl(0 0% 30%);
+    --gradient: linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --highlight: hsl(0 0% 100%);
+    --border-card: solid 1px var(--bg);
+}
+
+/* reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* basic styling */
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text);
+}
+
+.clock {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 40px 3em;
+}
+
+.clock-component {
+    padding: 18px 50px;
+    border-radius: 55px;
+    background: var(--gradient);
+    border: var(--border-card);
+    border-top: var(--highlight);
+    box-shadow: var(--shadow);
+}
+
+.clock--time {
+    font-family: "Digital-7", sans-serif;
+    font-size: 3rem;
+}
+
+.clock--unit {
+    color: var(--text-muted);
+    font-size: 1.2;
+    margin-top: 0;
+}
+
+footer {
+    font-size: 0.75rem;
+    padding-block: 1em;
+}
+
+/* media queries */
