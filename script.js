@@ -50,6 +50,7 @@ updateNavbar(media);
 
 let lightmode = localStorage.getItem("lightmode");
 const themeSwitch = document.querySelector("#theme-switch");
+const svgIcons = document.querySelectorAll("svg");
 
 if (lightmode === "active") enableLightMode();
 
@@ -61,9 +62,11 @@ themeSwitch.addEventListener("click", () => {
 function enableLightMode() {
     document.body.classList.add("lightmode");
     localStorage.setItem("lightmode", "active");
+    svgIcons.forEach((icon) => icon.setAttribute("fill", "#1E1E1E"));
 }
 
 function disableLightMode() {
     document.body.classList.remove("lightmode");
     localStorage.setItem("lightmode", null);
+    svgIcons.forEach((icon) => icon.setAttribute("fill", "#FFF"));
 }
