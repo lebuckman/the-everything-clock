@@ -42,6 +42,20 @@ function activateCountdown(dateString) {
 activateCountdown("2025-12-5");
 
 /**
+ * INPUT MODAL
+ */
+
+const modal = document.querySelector("#input-modal");
+
+function openModal() {
+    modal.classList.add("show");
+}
+
+function closeModal() {
+    modal.classList.remove("show");
+}
+
+/**
  * SIDEBAR NAVIGATION
  */
 

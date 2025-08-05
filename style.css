@@ -65,6 +65,7 @@ button,
 textarea,
 select {
     font: inherit;
+    color: inherit;
 }
 
 /* basic styling */
@@ -133,6 +134,10 @@ footer {
     background-color: var(--bg-dark);
 }
 
+.date-display:hover {
+    background: transparent;
+}
+
 /* rotating color border */
 
 @property --angle {
@@ -176,6 +181,67 @@ footer {
     }
 }
 
+/* input modal */
+
+#input-modal {
+    display: none;
+}
+
+#input-modal.show {
+    display: block;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10;
+    padding: 2em 4em;
+    background: var(--gradient);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    border-top: 1px solid var(--highlight);
+}
+
+.modal .interactive-svg {
+    position: fixed;
+    top: 10px;
+    left: 5px;
+}
+
+input[type="date"] {
+    margin-block: 10px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 1.125rem;
+    background: var(--bg-light);
+    border-radius: inherit;
+    box-shadow: var(--shadow);
+}
+::-webkit-calendar-picker-indicator {
+    padding: 5px;
+    border-radius: 3px;
+    background-color: var(--text);
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    background: hsla(0, 0%, 0%, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+}
+
+.modal.show ~ .overlay {
+    display: block;
+}
+
 /* nav menu */
 
 nav {
@@ -206,8 +272,7 @@ nav ul li a.active-mode {
     font-weight: 700;
 }
 
-#open-sidebar-btn,
-#close-sidebar-btn {
+.interactive-svg {
     background: none;
     border: none;
     cursor: pointer;
@@ -233,16 +298,8 @@ nav.show {
     right: 0;
 }
 
-nav.show ~ #overlay {
+nav.show ~ .overlay {
     display: block;
-}
-
-#overlay {
-    display: none;
-    background: hsla(0, 0%, 0%, 0.5);
-    position: fixed;
-    inset: 0;
-    z-index: 9;
 }
 
 /* light / dark mode icon */
