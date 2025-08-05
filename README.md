@@ -1,4 +1,4 @@
-> Version 0.1
+> Version 1.0
 
 # The Everything Clock
 
@@ -6,11 +6,11 @@ A work-in-progress app designed to include various clock-related features in a s
 
 ## Starting Tasks
 
--   **Countdown**: count down to a specific date
+-   ~~**Countdown**: count down to a specific date~~
 -   **Days Since**: count time that has passed since a day
 -   **Timer**: features of a normal timer such as a stopwatch or alarm
     -   Time management such as Pomodoro or 80/20 or custom time-blocking
--   **Misc**: accessibility, desktop-view, deployment, user experience/feedback, etc.
+-   **Misc**: accessibility, non-mobile display, user experience/feedback, etc.
 
 ## Future Tasks
 
