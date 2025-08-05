@@ -56,13 +56,16 @@
 
 		<div id="activity">
 			<h1>Days Until</h1>
-			<div class="date-display" id="open-modal-btn" onclick="openModal()" aria-label="open modal">5 December</div>
+			<div class="date-display" id="open-modal-btn" onclick="openModal()" aria-label="open modal">Enter date here</div>
 		</div>
 
 		<div id="input-modal" class="modal">
-			<button id="close-modal-btn" class="interactive-svg" onclick="closeModal()" aria-label="close modal" aria-modal="true"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
-			<label for="date">Select a date:</label>
-			<input type="date" name="date" id="date">
+			<div class="modal-container">
+				<button id="close-modal-btn" class="interactive-svg" onclick="closeModal()" aria-label="close modal" aria-modal="true"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+				<label for="date">Select a date:</label>
+				<input type="date" name="date" id="date">
+				<button id="confirm-modal-btn" class="interactive-svg" aria-label="confirm date selected"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></button>
+			</div>
 		</div>
 		<div class="overlay" onclick="closeModal()" aria-hidden="true"></div>
 

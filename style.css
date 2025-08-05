@@ -192,25 +192,41 @@ footer {
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     position: fixed;
     top: 50%;
     left: 50%;
     translate: -50% -50%;
     z-index: 10;
-    padding: 2em 4em;
+    padding: 2em;
     background: var(--gradient);
     box-shadow: var(--shadow);
     border-radius: 10px;
     border-top: 1px solid var(--highlight);
 }
 
-.modal .interactive-svg {
+.modal-container {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.modal-container label {
+    grid-column: 1 / -1;
+}
+
+#close-modal-btn {
     position: fixed;
     top: 10px;
     left: 5px;
+}
+
+#confirm-modal-btn {
+    background-color: hsl(120, 68%, 31%);
+    display: grid;
+    place-content: center;
+    align-self: center;
+    aspect-ratio: 1;
+    border-radius: 50%;
 }
 
 input[type="date"] {

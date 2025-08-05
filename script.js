@@ -2,10 +2,19 @@ dayjs.extend(dayjs_plugin_duration);
 
 const clockContainer = document.querySelector("#clock");
 const activityContainer = document.querySelector("#activity");
+const dateInput = document.querySelector("#date");
+const confirmInputBtn = document.querySelector("#confirm-modal-btn");
 
 /**
  * COUNTDOWN (DAYS UNTIL X)
  */
+
+let countdownInterval;
+
+confirmInputBtn.addEventListener("click", () => {
+    activateCountdown(dateInput.value);
+    closeModal();
+});
 
 function activateCountdown(dateString) {
     const targetDate = dayjs(dateString);
@@ -13,7 +22,9 @@ function activateCountdown(dateString) {
     activityContainer.querySelector(".date-display").textContent =
         targetDate.format("D MMMM YYYY");
 
-    setInterval(() => {
+    if (countdownInterval) clearInterval(countdownInterval);
+
+    countdownInterval = setInterval(() => {
         const now = dayjs();
         const countdown = dayjs.duration(targetDate.diff(now));
 
@@ -38,8 +49,6 @@ function activateCountdown(dateString) {
             .padStart(2, "0");
     }, 250);
 }
-
-activateCountdown("2025-12-5");
 
 /**
  * INPUT MODAL
