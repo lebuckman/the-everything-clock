@@ -71,6 +71,9 @@ select {
 /* basic styling */
 
 body {
+    max-width: 500px;
+    margin: 0 auto;
+
     min-height: 100vh;
     line-height: 1.5;
     text-align: center;
@@ -281,6 +284,15 @@ nav ul {
 
 nav ul li {
     padding: 1em 2em;
+    text-align: start;
+}
+
+#footer {
+    text-align: center;
+}
+
+#footer span {
+    display: block;
 }
 
 nav ul li a.active-mode {
