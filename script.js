@@ -10,7 +10,7 @@ const activityContainer = document.querySelector("#activity");
 function activateCountdown(dateString) {
     const targetDate = dayjs(dateString);
 
-    activityContainer.querySelector(".until__event").textContent =
+    activityContainer.querySelector(".date-display").textContent =
         targetDate.format("D MMMM YYYY");
 
     setInterval(() => {
