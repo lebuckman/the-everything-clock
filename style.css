@@ -169,7 +169,7 @@ footer {
 }
 
 .date-display::before {
-    filter: blur(1rem);
+    filter: blur(1.2rem);
 }
 
 @keyframes spin {
