@@ -160,7 +160,6 @@ footer {
     translate: -50% -50%;
     z-index: -1;
     border-radius: inherit;
-    animation: 3s spin linear infinite;
     background: conic-gradient(
         from var(--angle),
         #ff4545,
@@ -175,12 +174,20 @@ footer {
     filter: blur(1.2rem);
 }
 
-@keyframes spin {
-    from {
-        --angle: 0deg;
+/* animate custom property if supported */
+@supports (background: conic-gradient(from var(--angle), red, blue)) {
+    @keyframes spin {
+        from {
+            --angle: 0deg;
+        }
+        to {
+            --angle: 360deg;
+        }
     }
-    to {
-        --angle: 360deg;
+
+    .date-display::after,
+    .date-display::before {
+        animation: spin 3s linear infinite;
     }
 }
 
