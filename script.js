@@ -76,9 +76,7 @@ const navLinks = document.querySelectorAll("nav a");
 
 // close sidebar when a selection is made
 navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        closeSidebar();
-    });
+    link.addEventListener("click", () => closeSidebar());
 });
 
 // if on mobile device, make navigation untabbable when not expanded
@@ -86,7 +84,7 @@ media.addEventListener("change", (e) => updateNavbar(e));
 
 function updateNavbar(e) {
     const isMobile = e.matches;
-    console.log(isMobile);
+
     if (isMobile) {
         navbar.setAttribute("inert", "");
     } else {
